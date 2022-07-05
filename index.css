@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap");
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: "Nunito", sans-serif;
 }
 body h1 {
@@ -9,8 +14,45 @@ body h1 {
   margin-top: 1rem;
 }
 
-video {
+.intro {
+  height: 100vh;
+}
+.intro video {
+  height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.intro h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  color: white;
+}
+
+section {
+  height: 100vh;
+  color: black;
+}
+section h1 {
+  padding-top: 300px;
+  text-align: center;
+  font-size: 80px;
+}
+
+.text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
+}
+
+p {
+  font-size: 5rem;
+  padding: 1rem;
+  background: #a0cba4;
+  color: #d5e2d6;
+  text-shadow: #4a744d 1px 1px, #4a744d 2px 2px, #4a744d 3px 3px, #4a744d 4px 4px, #4a744d 5px 5px, #4a744d 6px 6px, #4a744d 7px 7px, #4a744d 8px 8px, #4a744d 9px 9px, #4a744d 10px 10px, #4a744d 11px 11px, #4a744d 12px 12px, #4a744d 13px 13px, #4a744d 14px 14px, #4a744d 15px 15px, #4a744d 16px 16px, #4a744d 17px 17px, #4a744d 18px 18px, #4a744d 19px 19px, #4a744d 20px 20px, #4a744d 21px 21px, #4a744d 22px 22px, #4a744d 23px 23px, #4a744d 24px 24px, #4a744d 25px 25px, #4a744d 26px 26px, #4a744d 27px 27px, #4a744d 28px 28px, #4a744d 29px 29px;
 }/*# sourceMappingURL=index.css.map */
