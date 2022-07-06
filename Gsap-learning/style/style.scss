@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+}
+
+.div1,
+.div2 {
+  height: 100vh;
+}
+
+.div1 {
+  background-color: pink;
+}
+.div2 {
+  background-color: salmon;
+  .square {
+    width: 100px;
+    aspect-ratio: 1;
+    background: royalblue;
+  }
+  .square2 {
+    margin-top: 300px;
+    width: 100px;
+    aspect-ratio: 1;
+    background: fuchsia;
+  }
+}
