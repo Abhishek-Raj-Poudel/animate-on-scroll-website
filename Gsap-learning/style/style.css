@@ -7,21 +7,22 @@ body {
   height: 100vh;
 }
 
-.div1 {
-  background-color: pink;
-}
-
-.div2 {
-  background-color: salmon;
-}
-.div2 .square {
+.timeline {
   width: 100px;
   aspect-ratio: 1;
   background: royalblue;
 }
-.div2 .square2 {
-  margin-top: 300px;
+
+.div2 .square {
   width: 100px;
   aspect-ratio: 1;
-  background: fuchsia;
-}/*# sourceMappingURL=style.css.map */
+  background: salmon;
+}
+.div2 .othersquare {
+  width: 100px;
+  aspect-ratio: 1;
+}
+
+.red {
+  background-color: red;
+} /*# sourceMappingURL=style.css.map */
