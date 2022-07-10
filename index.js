@@ -1,60 +1,57 @@
-const intro = document.querySelector(".intro");
-const video = intro.querySelector("video");
-const introText = intro.querySelector("h1");
-const testText = intro.querySelector(".test");
-const rectangle = intro.querySelector(".rectangle");
+gsap.registerPlugin(ScrollTrigger);
+// video.pause();
+// video.currentTime = 0;
 
-const controller = new ScrollMagic.Controller();
+// let frame_count = 600;
+// let offset_value = 100;
 
-let battle_scene = new ScrollMagic.Scene({
-  duration: 15000,
-  triggerElement: intro,
-  triggerHook: 0,
-})
-  .setPin(intro)
-  .addTo(controller);
+// let accelamount = 0.1;
+// let delay = 0;
+// let scrollpos = 0;
 
-//learn more about this
-const textAnimation = gsap.fromTo(
-  [introText, testText],
-  { opacity: 1 },
-  { opacity: 0, x: 300 }
-);
+// ScrollTrigger.create({
+//   trigger: video,
+//   start: "top top",
+//   end: "+=" + frame_count * offset_value,
+//   onUpdate: (self) => (scrollpos = self.progress * 10),
+//   pin: true,
+//   scrub: 1,
+//   markers: true,
+// });
 
-const rectangleAnimation = gsap.fromTo(
-  rectangle,
-  { x: -50, y: -300 },
-  { x: 400, y: 500, rotation: 360 }
-);
+// setInterval(() => {
+//   video.currentTime = scrollpos;
+// }, 1);
 
-let text_scene = new ScrollMagic.Scene({
-  duration: 1000,
-  triggerElement: intro,
-  triggerHook: 0,
-})
-  .setTween(textAnimation)
-  .addTo(controller);
+const video = document.querySelector("video");
 
-// let rectangle_scene = new ScrollMagic.Scene({
-//   duration: 1000,
-//   triggerElement: intro,
-//   triggerHook: 0,
-// })
-//   .setTween(rectangleAnimation)
-//   .addTo(controller);
-
-//video animation
-
-let accelamount = 0.4;
-let scrollpos = 0;
-let delay = 0;
-
-battle_scene.on("update", (e) => {
-  scrollpos = e.scrollPos / 1000;
+let tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "video",
+    start: "top top",
+    end: "bottom+=300% bottom",
+    pin: true,
+    scrub: 1,
+    markers: true,
+  },
 });
 
-setInterval(() => {
-  delay += (scrollpos - delay) * accelamount; // delay
+// wait until video metadata is loaded,
+//so we can grab the proper duration before adding the onscroll animation.
+//Might need to add a loader for loonng videos
+video.onloadedmetadata = function () {
+  tl.to(video, { currentTime: video.duration });
+};
 
-  video.currentTime = delay;
-}, 100);
+// Dealing with devices
+function isTouchDevice() {
+  return (
+    "ontouchstart" in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0
+  );
+}
+if (isTouchDevice()) {
+  video.play();
+  video.pause();
+}
