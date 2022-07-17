@@ -15,6 +15,7 @@ const totalVideoFrame = 562;
 const videoDuration = 9;
 
 const currentLocation = window.location.pathname;
+console.log(currentLocation);
 const currentDirectory = currentLocation.substring(
   0,
   currentLocation.lastIndexOf("/")
