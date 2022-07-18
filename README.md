@@ -1,2 +1,3 @@
 # animate-on-scroll-website
-This is a website project that I am working on to learn how to make website animate only when I scroll like the Mac-book m2 page does when you open it.
+
+This is a Food Videography website. This is the a website which shows the user what kind of videos their will be had how we do it. We used HTML and CSS for content and styling and Vanilla JS for the function. We used Gasp Scroll Trigger to help us achive the play video on Scroll effect.
