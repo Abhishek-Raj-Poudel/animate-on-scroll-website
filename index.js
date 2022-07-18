@@ -61,47 +61,5 @@ function animateVideoOnScroll(canvasID, triggerID, videoInfo) {
   }
 }
 
-// Real working version of the code
-
-// var targets = document.querySelectorAll("#tiffen_text");
-
-// targets.forEach((target) => {
-//   gsap
-//     .timeline({
-//       defaults: { duration: 5 },
-//       scrollTrigger: {
-//         trigger: target,
-//         markers: true,
-//         scrub: true,
-//         start: "center 50%",
-//         end: "bottom top",
-//         pin: true,
-//       },
-//     })
-//     .fromTo(target, { y: 300 }, { y: -300 })
-//     .from(target, { opacity: 0, duration: 0.2 }, 0)
-//     .to(target, { opacity: 0, duration: 0.2 }, 0.8);
-// });
-
-var targets = document.querySelectorAll("#tiffen_text");
-
-targets.forEach((target) => {
-  gsap
-    .timeline({
-      defaults: { duration: 5 },
-      scrollTrigger: {
-        trigger: target,
-        markers: true,
-        scrub: true,
-        start: "center 50%",
-        end: `bottom+=${5 * 100} top`,
-        pin: true,
-      },
-    })
-    .fromTo(target, { y: 25 }, { y: -25 })
-    .from(target, { opacity: 0, duration: 2 }, 0)
-    .to(target, { opacity: 0, duration: 2 }, 1);
-});
-
 animateVideoOnScroll("IntroVideo", "IntroVideo2", IntroVideoInfo);
 animateVideoOnScroll("IntroVideo2", "after", IntroVideoInfo2);
