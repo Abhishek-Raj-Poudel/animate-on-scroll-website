@@ -37,10 +37,8 @@ button {
   height: 100vh;
   position: absolute;
   z-index: 1000;
-  /* background: wheat; */
   padding: 1rem;
   text-align: center;
-  /* opacity: 0.9; */
 
   /* From https://css.glass */
   background: rgba(255, 232, 168, 0.41);
