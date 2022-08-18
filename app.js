@@ -1,23 +1,22 @@
 gsap.registerPlugin(ScrollTrigger);
 
 const demoVideo1Info = {
-  videoDuration: 7,
-  totalVideoFrame: 440,
+  totalFrames: 440,
+  totalTime: 7,
   images: [],
   currentFrame: 0,
   currentImage: (index) =>
-    `./Dognut/Dognut${index.toString().padStart(3, 0)}.jpg`,
+    `./Dognut/Dognut${index.toString().padStart(3, "0")}.jpg`,
 };
-
 const demoVideo2Info = {
-  videoDuration: 9,
-  totalVideoFrame: 562,
+  totalFrames: 562,
+  totalTime: 9,
   images: [],
   currentFrame: 0,
   currentImage: (index) =>
     `./TestVideoFrames/2022-06-12 22-39-07converted${index
       .toString()
-      .padStart(3, 0)}.jpg`,
+      .padStart(3, "0")}.jpg`,
 };
 
 animateOnScroll("demo_video1", demoVideo1Info);
